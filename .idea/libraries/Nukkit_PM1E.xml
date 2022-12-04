@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Nukkit-PM1E">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../fsdownload/Nukkit-PM1E.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

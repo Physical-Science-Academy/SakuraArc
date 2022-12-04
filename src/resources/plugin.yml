@@ -1,0 +1,72 @@
+name: Arc
+main: me.vrekt.arc.Arc
+version: 1.7.2
+description: An anticheat for Nukkit.
+author: Vrekt
+api: [ "1.0.0" ]
+depend:
+  - Sakura
+
+permissions:
+  arc.commands.toggleviolations:
+    description: Allows the player to toggle their violations.
+  arc.commands.cancelban:
+    description: Allows the player to cancel bans.
+  arc.commands.reloadconfig:
+    description: Allows the player to reload Arcs configuration.
+  arc.commands.debug:
+    description: Allows the player to view debug information.
+  arc.commands.base:
+    description: Allows the player to execute /arc
+  arc.commands.all:
+    description: Allows the player to use all Arc commands.
+  arc.commands.timings:
+    description: Allows the player to view timings information.
+  arc.commands.violationhistory:
+    description: Allows the player to view others violation history.
+  arc.commands.summary:
+    description: Allows the player to view summary on other players.
+  arc.bypass:
+    default: false
+    description: Allows the player to bypass all Arc checks.
+    children:
+      arc.bypass.player:
+        description: Allows the player to bypass Player related checks.
+        children:
+          arc.bypass.player.fastuse:
+            description: Allows the player to bypass the FastUse check.
+      arc.bypass.moving:
+        description: Allows the player to bypass Moving related checks.
+        children:
+          arc.bypass.moving.morepackets:
+            description: Allows the player to bypass the MorePackets check.
+          arc.bypass.moving.flight:
+            description: Allows the player to bypass the Flight check.
+          arc.bypass.moving.speed:
+            description: Allows the player to bypass the Speed check.
+          arc.bypass.moving.phase:
+            description: Allows the player to bypass the Phase check.
+          arc.bypass.moving.liquidwalk:
+            description: Allows the player to bypass the LiquidWalk check.
+      arc.bypass.block:
+        description: Allows the player to bypass block related checks
+        children:
+          arc.bypass.block.nuker:
+            description: Allows the player to bypass the Nuker check.
+          arc.bypass.block.fastbreak:
+            description: Allows the player to bypass the FastBreak check.
+      arc.bypass.combat:
+        description: Allows the player to bypass combat related checks.
+        children:
+          arc.bypass.combat.reach:
+            description: Allows the player to bypass the reach check.
+          arc.bypass.combat.killaura:
+            description: Allows the player to bypass the KillAura check.
+          arc.bypass.combat.fastclick:
+            description: Allows the player to bypass the FastClick check.
+  arc.violations:
+    description: Allows the player to view player violations as they come in.
+
+commands:
+  arc:
+    description: The base command for managing Arc.
